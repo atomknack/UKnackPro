@@ -1,0 +1,55 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+namespace UKnack.UI.ShouldBeInternalButActuallyPublicClasses;
+
+[EditorBrowsable(EditorBrowsableState.Never)]
+public abstract class UILayoutProviderDependantRegisterer : UILayoutProviderSorted
+{
+    private protected List<IDependant> _dependants = new List<IDependant>();
+    private protected VisualElement _root;
+
+    protected void RemoveNullDependants()
+    {
+        int i = 0;
+        while (i < _dependants.Count)
+        {
+            if (_dependants[i] == null)
+            {
+                _dependants.RemoveAt(i);
+                continue;
+            }
+            i++;
+        }
+    }
+
+    internal override void RegisterScript(IDependant unRegisteredDependant)
+    {
+        //Debug.Log($"Register script called for {unRegisteredDependant}");
+        if (unRegisteredDependant == null)
+            throw new ArgumentNullException(nameof(unRegisteredDependant));
+
+        foreach (var registered in _dependants)
+            if (registered == unRegisteredDependant)
+                throw new InvalidOperationException($"Provider already contains registered {unRegisteredDependant}");
+
+        AddDependantToList(unRegisteredDependant);
+    }
+
+    private protected virtual void AddDependantToList(IDependant dependant)
+    {
+        bool activated = NewDependantCanBeCalled();
+        if (activated)
+        {
+            dependant.LayoutReady(_root);
+            dependant.LayoutReadyAndAllDependantsCalled(_root);
+        }
+        _dependants.Add(dependant);
+    }
+
+    private protected virtual bool NewDependantCanBeCalled() => isActiveAndEnabled;
+}
