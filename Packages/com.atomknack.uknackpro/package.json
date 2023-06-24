@@ -1,0 +1,20 @@
+{
+  "name": "com.atomknack.uknackpro",
+  "version": "1.0.0",
+  "displayName": "UKnack Pro",
+  "description": "Set of Pro tools that make working with Unity better and help write cleaner code",
+  "unity": "2022.2",
+  "unityRelease": "0b8",
+  "documentationUrl": "https://github.com/atomknack/UKnackSource/wiki",
+  "license": "Proprietary",
+  "dependencies": {
+    "com.unity.inputsystem": "1.5.1",
+    "com.atomknack.uknackbasis": "1.9.1"
+  },
+  "author": {
+    "name": "atomknack",
+    "email": "atomknack@gmail.com",
+    "url": "atomknack.com"
+  },
+  "scopedRegistries": []
+}
