@@ -1,7 +1,7 @@
 ﻿#if UNITY_EDITOR
 using UnityEngine;
 
-namespace UKnack.EditorOnly
+namespace UKnack.EditorTools
 {
 
     public partial class ReferenceCheckerEditorWindow

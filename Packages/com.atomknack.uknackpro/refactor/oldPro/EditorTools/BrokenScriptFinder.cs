@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace UKnack.EditorOnly
+namespace UKnack.EditorTools
 {
 
     public class BrokenScriptFinder : EditorWindow

@@ -14,12 +14,12 @@ namespace UKnack.Concrete.UI.Dependants
         private IValue<T> _counter;
         private VisualElement _currentUpdatedUIElement;
         protected VisualElement GetCurrentUpdatedUIElement => _currentUpdatedUIElement;
-        protected abstract IValue<T> GetValueProvider();
+        protected abstract IValue<T> GetValidValueProvider();
         protected abstract string RawValueToStringConversion(T value);
 
         protected override void OnLayoutCreatedAndReady(VisualElement layout)
         {
-            _counter = GetValueProvider();
+            _counter = GetValidValueProvider();
             _currentUpdatedUIElement = layout.TryFindSomeKindOfTextStorage(_nameOfUpdatedUI);
             UIContainerValidation(_currentUpdatedUIElement, _nameOfUpdatedUI);
             UpdateUIBasedOnStorage(_counter.GetValue());

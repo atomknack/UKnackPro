@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UKnack.Common;
 
-namespace UKnack.EditorOnly
+namespace UKnack.EditorTools
 {
 
     public partial class ReferenceCheckerEditorWindow

@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace UKnack.EditorOnly
+namespace UKnack.EditorTools
 {
     public partial class ReferenceCheckerEditorWindow
     {
