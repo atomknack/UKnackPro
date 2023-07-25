@@ -1,4 +1,7 @@
-﻿using System;
+﻿// replaced by SetActiveForGameObjects with combination of SOEventToUnityEventAdapter
+
+/*
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UKnack;
@@ -39,3 +42,4 @@ public sealed class EnableDisableGameobjectsOnSOValue : AbstractEnableDisableGam
         valueToCheck.UnsubscribeNullSafe(SetActiveGameobjectsBasedOnValue);
     }
 }
+*/

@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UKnack.Attributes;
 using UKnack.Events;
-using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 namespace UKnack.Commands;
 
@@ -46,8 +43,6 @@ public static void Execute(GameObject go, bool includeCommandsInInactive, IComma
             {
                 command.Execute();
             }
-        //else
-        //    Debug.Log($"Have self in children, total number of commands {commands.Length} with self");
     }
     private static void CanBeNull(UnityEngine.Object obj) { }
 }

@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using UKnack.Attributes;
+using UKnack.Events;
 using UKnack.Preconcrete.Commands;
-using UnityEngine;
 
 namespace UKnack.Concrete.Audio
 {
@@ -10,8 +9,15 @@ namespace UKnack.Concrete.Audio
     [RequireComponent(typeof(AudioSource))]
     public class AudioPlayOnEvent : AbstractCommandSubscribedToSOEvent
     {
+        [SerializeField]
+        [ValidReference(typeof(IEvent))]
+        private UnityEngine.Object _subscribedTo;
+
+        protected override IEvent SubscribedTo => (IEvent)_subscribedTo;
+
         [SerializeField] private bool _playAudioAsOneShot = false;
         private AudioSource[] _audiosources;
+
         protected void Awake()
         {
             _audiosources = GetComponents<AudioSource>();

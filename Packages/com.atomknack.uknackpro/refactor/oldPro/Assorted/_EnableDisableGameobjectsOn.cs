@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿// replaced by SetActiveForGameObjects with combination of SOEventToUnityEventAdapter
+
+/*
+using System.Collections;
 using UKnack.Attributes;
 
 namespace UKnackPro.Assorted;
@@ -41,3 +44,4 @@ public abstract class AbstractEnableDisableGameobjectsOn : MonoBehaviour
 
     }
 }
+*/

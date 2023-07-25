@@ -1,3 +1,5 @@
+// obsolete because of possible combinations SOEventToUnityEventAdapter DelayedUnityEventCommand SetActiveForGameObjects  
+/*
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,3 +36,4 @@ public sealed class EnableGameobjectsDelayed : MonoBehaviour
     }
 
 }
+*/

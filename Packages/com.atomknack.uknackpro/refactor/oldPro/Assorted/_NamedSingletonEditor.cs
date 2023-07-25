@@ -1,3 +1,6 @@
+// obsole because of ScriptableSingletonIdentityWithLogInEditor and RegisterSingletonIdOrSelfDestruct
+
+/*
 #if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
@@ -158,21 +161,7 @@ public class NamedSingletonEditor : Editor
         return toSelect.ToArray();
     }
 
-    /* wrong, maybe will work fork for ScriptableObject
-public static (T script, string path)[] GetAllInstances<T>() where T : MonoBehaviour //ScriptableObject
-{
-    Resources.FindObjectsOfTypeAll<T>();
-    string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);
-    Debug.Log(guids.Length);
-    (T script, string path)[] a = new (T script, string path)[guids.Length];
-    for (int i = 0; i < guids.Length; i++)        
-    {
-        string path = AssetDatabase.GUIDToAssetPath(guids[i]);
-        a[i] = (AssetDatabase.LoadAssetAtPath<T>(path), path);
-    }
-
-    return a;
-}*/
-
 }
 #endif
+
+*/
