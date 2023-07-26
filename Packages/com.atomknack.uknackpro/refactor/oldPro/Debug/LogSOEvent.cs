@@ -4,6 +4,7 @@ using UKnack;
 using UKnack.Events;
 using UKnack.Concrete.Commmon;
 
+// Because you can directly call scriptable object from monobehaviour this is probably useless
 public class LogSOEvent : MonoBehaviour
 {
     [SerializeField] ScriptableLoggerDebugLogOnlyInEditor logger;

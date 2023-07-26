@@ -8,6 +8,7 @@ namespace UKnack.Concrete.Commands
 {
     [Obsolete("Not tested")]
     [AddComponentMenu("UKnack/Commands/SetActiveForGameObjects")]
+    // For sinle gameobject SetActive can be called just from UnityEvent, so no need for separate script
     internal class SetActiveForGameObjects : CommandMonoBehaviour<bool>
     {
         [SerializeField]

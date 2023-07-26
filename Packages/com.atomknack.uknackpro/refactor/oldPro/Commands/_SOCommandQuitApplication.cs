@@ -5,6 +5,7 @@ using UnityEngine;
 namespace UKnack.Commands;
 
 [CreateAssetMenu(fileName = "SOCommandQuitApplication", menuName = "UKnack/SOCommand/SOCommandQuitApplication", order = 3000)]
+//replaced by basis ApplicationQuitCommand
 internal class SOCommandQuitApplication : ScriptableObjectWithReadOnlyName, ICommand
 {
     [NonSerialized] private string _description = nameof(SOCommandQuitApplication);
