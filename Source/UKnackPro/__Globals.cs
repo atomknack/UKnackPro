@@ -1,2 +1,2 @@
 ﻿global using UnityEngine;
-global using static UnityEngine.InputSystem.InputAction;
+//global using static UnityEngine.InputSystem.InputAction;

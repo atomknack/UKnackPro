@@ -1,0 +1,8 @@
+<Project>
+ <PropertyGroup>
+   <Deterministic>true</Deterministic>
+	 <!--
+	<MSBuildProjectExtensionsPath>..\obj\</MSBuildProjectExtensionsPath>
+	-->
+ </PropertyGroup>
+</Project>
