@@ -4,15 +4,14 @@ using UKnack.Common;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace UKnack
+namespace UKnack.Concrete.Common
 {
-    [AddComponentMenu("UKnack/DoSomethingLaterAfterDestroy")]
+    [AddComponentMenu("UKnack/Common/DoSomethingInNewThreadLaterAfterDestroy")]
     [DefaultExecutionOrder(100501)]
-    public class DoSomethingLaterAfterDestroy : MonoBehaviour
+    public class DoSomethingInNewThreadLaterAfterDestroy : MonoBehaviour
     {
         [SerializeField][Range(100, 100000)] int waitForMilliseconds = 1000;
         [SerializeField] private UnityEvent whatToDoLater;
-        [SerializeField] private bool _dontDestroyOnLoad = true;
 
         private void Start()
         {
@@ -21,8 +20,6 @@ namespace UKnack
                 throw new ArgumentException($"time {waitForMilliseconds} should be in Range)");
             if (whatToDoLater == null)
                 throw new ArgumentNullException(nameof(whatToDoLater));
-            if (_dontDestroyOnLoad)
-                DontDestroyOnLoad(this.gameObject);
         }
         private void OnDestroy()
         {

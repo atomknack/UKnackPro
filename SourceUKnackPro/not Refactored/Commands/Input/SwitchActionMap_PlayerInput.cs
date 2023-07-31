@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UKnack.Commands;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-namespace UKnack.Commands;
+namespace UKnack.Concrete.Input;
 
 [AddComponentMenu($"UKnack/Input/{nameof(SwitchActionMap_PlayerInput)}:ICommand")]
 public class SwitchActionMap_PlayerInput : CommandMonoBehaviour
