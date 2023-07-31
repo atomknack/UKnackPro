@@ -30,7 +30,7 @@ public abstract class Dependant : MonoBehaviour, IDependant
     private bool _createdAndNotYetDestroyed;
 
     protected abstract void OnLayoutCreatedAndReady(VisualElement layout);
-    protected abstract void OnLayoutReadyAndAllDependantsCalled(VisualElement layout);
+    protected virtual void OnLayoutReadyAndAllDependantsCalled(VisualElement layout) { }
     protected abstract void OnLayoutGonnaBeDestroyedNow();
 
     private protected void Start()
