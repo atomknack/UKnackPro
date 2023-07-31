@@ -2,10 +2,8 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/Source/UKnackPro/bin/
-/Source/UKnackPro/obj/
-/Source/UKnackProConcrete/bin/
-/Source/UKnackProConcrete/obj/
+/SourceUKnackPro/bin/
+/SourceUKnackPro/obj/
 
 /[Ll]ibrary/
 /[Tt]emp/

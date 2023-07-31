@@ -1,0 +1,8 @@
+#! /usr/bin/bash
+
+sourceConcretePath='/c/GitHub/UKnackSource/UKnackBasisConcrete/Concrete/'
+basisConcretePath='/c/GitHub/UKnackBasis/Packages/com.atomknack.uknackbasis/UKnackBasisConcrete/Concrete/'
+cp -r $sourceConcretePath/* $basisConcretePath
+
+#read -p "Press enter to continue2"
+sleep 1
