@@ -9,12 +9,13 @@ using UnityEngine.UIElements;
 using UKnack.Attributes;
 using UKnack.Events;
 using UKnack.Values;
-using UKnack.Preconcrete.UI.SimpleToolkit;
+using UKnack.Preconcrete.UI.Dependants;
 
-namespace UKnack.Concrete.UI.SimpleToolkit
+namespace UKnack.Concrete.UI.Dependants
 {
-    [AddComponentMenu("UKnack/UI.SimpleToolkit/EffortlessToggleToRawSOValueFloatBinding")]
-    public class EffortlessToggleToRawSOValueFloatBinding : EffortlessUIElement_Toggle, ISubscriberToEvent<float>
+    [System.Obsolete("not tested")]
+    [AddComponentMenu("UKnack/UI.Dependants/DependantToggleToRawSOValueFloatBinding")]
+    public class DependantToggleToRawSOValueFloatBinding : DependantUIElement_Toggle, ISubscriberToEvent<float>
     {
         private string _description = string.Empty;
         public string Description => _description;
@@ -47,7 +48,7 @@ namespace UKnack.Concrete.UI.SimpleToolkit
 
         protected override void LayoutReadyAndElementFound(VisualElement layout)
         {
-            _description = $"{nameof(EffortlessToggleToRawSOValueFloatBinding)} of {gameObject.name}";
+            _description = $"{nameof(DependantToggleToRawSOValueFloatBinding)} of {gameObject.name}";
 
             if (_valueProvider == null)
                 throw new System.ArgumentNullException(nameof(_valueProvider));

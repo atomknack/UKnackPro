@@ -9,7 +9,7 @@
   "license": "Proprietary",
   "dependencies": {
     "com.unity.inputsystem": "1.5.1",
-    "com.atomknack.uknackbasis": "1.9.1"
+    "com.atomknack.uknackbasis": "2.5.0"
   },
   "author": {
     "name": "atomknack",

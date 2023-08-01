@@ -9,12 +9,13 @@ using UnityEngine.UIElements;
 using UKnack.Attributes;
 using UKnack.Events;
 using UKnack.Values;
-using UKnack.Preconcrete.UI.SimpleToolkit;
+using UKnack.Preconcrete.UI.Dependants;
 
-namespace UKnack.Concrete.UI.SimpleToolkit
+namespace UKnack.Concrete.UI.Dependants
 {
-    [AddComponentMenu("UKnack/UI.SimpleToolkit/EffortlessToggleToRawSOValueFloatBinding")]
-    public class EffortlessToggleToRawSOValueFloatBinding : EffortlessUIElement_Toggle, ISubscriberToEvent<float>
+    [System.Obsolete("not tested")]
+    [AddComponentMenu("UKnack/UI.Dependants/DependantSliderToRawSOValueFloatBinding")]
+    public class DependantSliderToRawSOValueFloatBinding : DependantUIElement_Slider, ISubscriberToEvent<float>
     {
         private string _description = string.Empty;
         public string Description => _description;
@@ -24,45 +25,45 @@ namespace UKnack.Concrete.UI.SimpleToolkit
         private SOValueMutable<float> _valueProvider;
 
         [SerializeField] 
-        private UnityEvent<bool> _onToggleUIChanged;
+        private UnityEvent<float> _onSliderUIChanged;
 
-        private void OnValueChanged(ChangeEvent<bool> ev)
+        private void OnValueChanged(ChangeEvent<float> ev)
         {
             if (ev.previousValue == ev.newValue)
                 return;
-            float rawValue = ev.newValue ? 1f : 0f;
+            float rawValue = ev.newValue;
             if (rawValue == _valueProvider.RawValue)
                 return;
             _valueProvider.SetValue(rawValue);
-            _onToggleUIChanged.Invoke(ev.newValue);
+            _onSliderUIChanged.Invoke(ev.newValue);
         }
 
         public void OnEventNotification(float _)
         {
-            bool value = Mathf.Abs(_valueProvider.RawValue - 1f) < 0.00001f;//approximal version of: _valueProvider.RawValue == 1f
-            if (value == _toggle.value)
+            float value = _valueProvider.RawValue;
+            if (value == _slider.value)
                 return;
-            _toggle.SetValueWithoutNotify(value);
+            _slider.SetValueWithoutNotify(value);
         }
 
         protected override void LayoutReadyAndElementFound(VisualElement layout)
         {
-            _description = $"{nameof(EffortlessToggleToRawSOValueFloatBinding)} of {gameObject.name}";
+            _description = $"{nameof(DependantSliderToRawSOValueFloatBinding)} of {gameObject.name}";
 
             if (_valueProvider == null)
                 throw new System.ArgumentNullException(nameof(_valueProvider));
 
-            if (_onToggleUIChanged == null)
-                throw new System.ArgumentNullException(nameof(_onToggleUIChanged));
+            if (_onSliderUIChanged == null)
+                throw new System.ArgumentNullException(nameof(_onSliderUIChanged));
 
             OnEventNotification(_valueProvider.RawValue);
-            _toggle.RegisterCallback<ChangeEvent<bool>>(OnValueChanged);
+            _slider.RegisterCallback<ChangeEvent<float>>(OnValueChanged);
             _valueProvider.Subscribe(this);
         }
 
         protected override void LayoutCleanupBeforeDestruction()
         {
-            _toggle.UnregisterCallback<ChangeEvent<bool>>(OnValueChanged);
+            _slider.UnregisterCallback<ChangeEvent<float>>(OnValueChanged);
             _valueProvider.Unsubscribe(this);
         }
     }
