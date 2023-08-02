@@ -10,7 +10,7 @@ namespace UKnack.UI.ShouldBeInternalButActuallyPublicClasses;
 [EditorBrowsable(EditorBrowsableState.Never)]
 public abstract class UILayoutProviderDependantRegisterer : UILayoutProviderSorted
 {
-    private protected List<IDependant> _dependants = new List<IDependant>();
+    private protected List<ILayoutDependant> _dependants = new List<ILayoutDependant>();
     private protected VisualElement _root;
 
     protected void RemoveNullDependants()
@@ -27,7 +27,7 @@ public abstract class UILayoutProviderDependantRegisterer : UILayoutProviderSort
         }
     }
 
-    internal override void RegisterScript(IDependant unRegisteredDependant)
+    internal override void RegisterScript(ILayoutDependant unRegisteredDependant)
     {
         //Debug.Log($"Register script called for {unRegisteredDependant}");
         if (unRegisteredDependant == null)
@@ -40,7 +40,7 @@ public abstract class UILayoutProviderDependantRegisterer : UILayoutProviderSort
         AddDependantToList(unRegisteredDependant);
     }
 
-    private protected virtual void AddDependantToList(IDependant dependant)
+    private protected virtual void AddDependantToList(ILayoutDependant dependant)
     {
         bool activated = NewDependantCanBeCalled();
         if (activated)

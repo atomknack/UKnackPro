@@ -9,7 +9,7 @@ using UKnack.UI.ShouldBeInternalButActuallyPublicClasses;
 namespace UKnack.UI;
 
 [AddComponentMenu("UKnack/UIProviders/UIInserted")]
-public sealed class UIInsertedIdAsLayoutProvider : UILayoutProviderDependantRegisterer, IDependant
+public sealed class UIInsertedIdAsLayoutProvider : UILayoutProviderDependantRegisterer, ILayoutDependant
 {
     [SerializeField]
     //[MarkNullAsColor(0,0.4f,0.2f, "This property will be taken from parent gameobject chain")]
@@ -91,7 +91,7 @@ public sealed class UIInsertedIdAsLayoutProvider : UILayoutProviderDependantRegi
 
         _subLayoutCreated = true;
     }
-    void IDependant.LayoutReadyAndAllDependantsCalled(VisualElement _)
+    void ILayoutDependant.LayoutReadyAndAllDependantsCalled(VisualElement _)
     {
         Debug.Log($"{gameObject.name} - LayoutReadyAndAllDependantsCalled");
         if (_subLayoutCreated == false)
@@ -139,7 +139,7 @@ public sealed class UIInsertedIdAsLayoutProvider : UILayoutProviderDependantRegi
         _rootVisible = _rootVisibleOnEnable;
         _scriptWasEnabled = true;
         CreateLayout();
-        ((IDependant)this).LayoutReadyAndAllDependantsCalled(null);
+        ((ILayoutDependant)this).LayoutReadyAndAllDependantsCalled(null);
     }
     private void OnDisable() => ShouldBeInvisible();
 

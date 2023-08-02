@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UKnack;
 using UKnack.UI;
+using UKnack.Preconcrete.UI.Dependants;
 
 public class DelayedHideVisualElementsByDisplayNone : DependantDelayed
 {

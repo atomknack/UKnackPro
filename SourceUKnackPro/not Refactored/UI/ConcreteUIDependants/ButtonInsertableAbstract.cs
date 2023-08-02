@@ -1,6 +1,7 @@
 using System;
 using UnityEngine.UIElements;
 using UKnack.Attributes;
+using UKnack.Preconcrete.UI.Dependants;
 
 namespace UKnack.UI;
 

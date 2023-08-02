@@ -9,7 +9,7 @@ namespace UKnack.UI;
 public sealed class UIParentsWillProvide : UILayoutProviderSorted
 {
     private UILayoutProviderSorted provider = null;
-    private List<IDependant> pendingRegistration = new();
+    private List<ILayoutDependant> pendingRegistration = new();
     private bool visibilityIsSet = false;
     private bool visibilityValue;
 
@@ -41,7 +41,7 @@ public sealed class UIParentsWillProvide : UILayoutProviderSorted
         foreach (var pending in pendingRegistration)
             provider.RegisterScript(pending);
     }
-    internal override void RegisterScript(IDependant dependant)
+    internal override void RegisterScript(ILayoutDependant dependant)
     {
         if (provider != null)
         {
