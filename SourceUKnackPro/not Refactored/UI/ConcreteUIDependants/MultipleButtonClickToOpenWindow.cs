@@ -1,6 +1,7 @@
 using System;
 using UKnack.Attributes;
 using UKnack.Preconcrete.UI.Dependants;
+using UKnack.Preconcrete.UI.Windows;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -15,7 +16,7 @@ public class MultipleButtonClickToOpenWindow : Dependant
     public struct ButtonToOpenWindow
     {
         public string buttonName;
-        [ValidReference] public UIWindowAbstract window;
+        [ValidReference] public UIWindowScriptableObject window;
     }
 
     [SerializeField] private ButtonToOpenWindow[] _buttonEventPairs;
@@ -44,7 +45,7 @@ public class MultipleButtonClickToOpenWindow : Dependant
         }
     }
 
-    public static Button AddButtonAction(string buttonName, UIWindowAbstract window, VisualElement layout)
+    public static Button AddButtonAction(string buttonName, UIWindowScriptableObject window, VisualElement layout)
     {
         Button button = layout.Q<Button>(buttonName);
         if (button == null)
@@ -52,7 +53,7 @@ public class MultipleButtonClickToOpenWindow : Dependant
         button.clicked += window.OpenNewModal;
         return button;
     }
-    public static void RemoveButtonAction(string buttonName, Button button, UIWindowAbstract window)
+    public static void RemoveButtonAction(string buttonName, Button button, UIWindowScriptableObject window)
     {
         if (button == null)
             throw new Exception($"button {buttonName} not found to remove OpenNewWindow from click events");

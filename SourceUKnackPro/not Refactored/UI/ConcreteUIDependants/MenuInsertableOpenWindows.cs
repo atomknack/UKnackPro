@@ -1,4 +1,5 @@
 ﻿using System;
+using UKnack.Preconcrete.UI.Windows;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,7 +12,7 @@ public class MenuInsertableOpenWindows : MenuInsertableAbstract
     public struct ButtonClickToOpenWindow
     {
         public string name;
-        public UIWindowAbstract window;
+        public UIWindowScriptableObject window;
         public int order;
     }
     [SerializeField] private ButtonClickToOpenWindow[] _buttons;
