@@ -7,7 +7,6 @@ using UKnack;
 using UKnack.Attributes;
 using UKnack.UI;
 using UnityEngine.Events;
-using UKnack.SOValues;
 using UKnack.Events;
 using UKnack.Values;
 
