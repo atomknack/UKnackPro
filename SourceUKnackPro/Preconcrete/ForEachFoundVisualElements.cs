@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 using UnityEngine.UIElements;
 using UKnack.Commands;
 
-namespace UKnack.Concrete.Commands.ForVisualElements
+namespace UKnack.Preoncrete.Commands
 {
-    public class HideMultipleByVisibleFalse : CommandMonoBehaviour<VisualElement>
+    public abstract class ForEachFoundVisualElements : CommandMonoBehaviour<VisualElement>
     {
-        [SerializeField] private string[] Elements;
+        [SerializeField] protected string[] Elements;
+
+        protected abstract void DoActionForFoundElement(VisualElement found);
 
         public override void Execute(VisualElement layout)
         {
@@ -18,7 +18,7 @@ namespace UKnack.Concrete.Commands.ForVisualElements
                 VisualElement found = layout.Q<VisualElement>(element);
                 if (found == null)
                     throw new Exception($"VisualElement {found} not found");
-                found.visible = false;
+                DoActionForFoundElement(found);
             }
         }
     }
