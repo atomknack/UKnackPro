@@ -1,9 +1,9 @@
 ﻿using UnityEngine.UIElements;
-using UKnack.SOValues;
 using UKnack.Values;
 using UKnack.Events;
 using UKnack.UI;
 using UnityEngine;
+using UKnack.Preconcrete.UI.Dependants;
 
 namespace UKnack.Concrete.UI.Dependants
 {
