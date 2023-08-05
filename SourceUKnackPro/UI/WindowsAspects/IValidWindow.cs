@@ -3,7 +3,7 @@
 namespace UKnack.UI.Windows
 {
     [System.Obsolete("WIP")]
-    internal interface IValidWindow
+    public interface IValidWindow
     {
         public void InitWindow(Span<Type> aspects);
         public TAspect GetAspect<TAspect>();
