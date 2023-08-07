@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.inputsystem": "1.5.1"
       },
-      "hash": "401aca79082c04d6ac45f8049ac7698fb7c1ab26"
+      "hash": "ff7d634b17832212c67ad472942d67406902432d"
     },
     "com.atomknack.uknackpro": {
       "version": "file:com.atomknack.uknackpro",
@@ -15,7 +15,7 @@
       "source": "embedded",
       "dependencies": {
         "com.unity.inputsystem": "1.5.1",
-        "com.atomknack.uknackbasis": "1.9.1"
+        "com.atomknack.uknackbasis": "2.5.0"
       }
     },
     "com.unity.collab-proxy": {
