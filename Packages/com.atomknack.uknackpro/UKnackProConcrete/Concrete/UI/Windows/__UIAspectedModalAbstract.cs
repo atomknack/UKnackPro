@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UKnack.Preconcrete.UI.Windows;
@@ -9,7 +10,7 @@ using UKnack.Common;
 
 namespace UKnack.Preconcrete.UI.Windows
 {
-    public abstract class UIAspectedModalAbstract: ScriptableObjectWithReadOnlyName
+    public abstract class __UIAspectedModalAbstract: ScriptableObjectWithReadOnlyName
     {
         [SerializeField] private bool _isSingleton;
         public abstract int CountOfOpenedWindows();
@@ -37,3 +38,4 @@ namespace UKnack.Preconcrete.UI.Windows
         protected abstract void BeforeClosed(GameObject window);
     }
 }
+*/
