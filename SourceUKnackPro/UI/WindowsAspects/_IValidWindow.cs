@@ -1,7 +1,7 @@
 ﻿/*
 using System;
 
-namespace UKnack.UI.Windows
+namespace UKnack.UI.Windows.Aspects
 {
     [System.Obsolete("WIP")]
     public interface IValidWindow

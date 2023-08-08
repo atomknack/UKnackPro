@@ -1,10 +1,9 @@
-﻿using System;
+﻿
 
-namespace UKnack.UI.Windows
+namespace UKnack.UI.Windows.Aspects;
+
+[System.Obsolete("WIP")]
+internal interface ITextSetter_HeaderText
 {
-    [System.Obsolete("WIP")]
-    internal interface ITextSetter_HeaderText
-    {
-        internal string HeaderText { set; }
-    }
+    internal string HeaderText { set; }
 }

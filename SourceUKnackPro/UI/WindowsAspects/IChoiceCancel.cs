@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace UKnack.UI.Windows
+namespace UKnack.UI.Windows.Aspects;
+
+[System.Obsolete("WIP")]
+internal interface IChoiceCancel
 {
-    [System.Obsolete("WIP")]
-    internal interface IChoiceCancel
-    {
-        internal Action CancelChoiceAction { set; }
-        public void CancelChoice();
-    }
+    internal Action CancelChoiceAction { set; }
+    public void CancelChoice();
 }

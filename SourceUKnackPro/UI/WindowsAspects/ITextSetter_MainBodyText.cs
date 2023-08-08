@@ -1,10 +1,9 @@
-﻿using System;
+﻿
 
-namespace UKnack.UI.Windows
+namespace UKnack.UI.Windows.Aspects;
+
+[System.Obsolete("WIP")]
+internal interface ITextSetter_MainBodyText
 {
-    [System.Obsolete("WIP")]
-    internal interface ITextSetter_MainBodyText
-    {
-        internal string MainBodyText { set; }
-    }
+    internal string MainBodyText { set; }
 }

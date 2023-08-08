@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UKnack.Common;
 using UKnack.Attributes;
+using UKnack.UI.Windows.Aspects;
 
 namespace UKnack.Preconcrete.UI.Windows
 {
@@ -54,11 +55,16 @@ namespace UKnack.Preconcrete.UI.Windows
             _opened = null;
         }
 
-        protected void ValidPrefab(GameObject prefab)
+        protected void ValidPrefab(UnityEngine.Object prefab)
         {
             if (prefab == null)
                 throw new System.ArgumentNullException(nameof(prefab));
-            ValidateNotNullPrefab(prefab);
+            GameObject go = prefab as GameObject;
+            if (go == null)
+                throw new System.ArgumentException($"prefab should be GameObject");
+            if (go.GetComponent<IModal>() == null)
+                throw new System.ArgumentException($"prefab should contain IModal aspect in it root");
+            ValidateNotNullPrefab(go);
         }
     }
 }

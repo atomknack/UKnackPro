@@ -1,11 +1,11 @@
 ﻿using System;
 using UKnack.Preconcrete.UI.Windows;
-using UKnack.UI.Windows;
+using UKnack.UI.Windows.Aspects;
 using UnityEngine;
 
 namespace UKnack.Concrete.UI.Windows
 {
-
+    [CreateAssetMenu(fileName = "AspectedPopUp", menuName = "UKnack/AspectedModals/AspectedPopUp", order = 700)]
     internal class AspectedPopUp : SingleModal
     {
         protected virtual void PopUpAskedToClose()
@@ -21,12 +21,17 @@ namespace UKnack.Concrete.UI.Windows
 
         protected override void ValidateNotNullPrefab(GameObject prefab)
         {
-            if (GetAspect<IAskToClose>(prefab) == null)
-                throw new System.Exception($"prefab should contain {nameof(IAskToClose)} aspect");
+            ValidateAspect<IAskToClose>(prefab);
         }
 
-        private static TAspect GetAspect<TAspect>(GameObject go) 
+        protected static void ValidateAspect<TAspect>(GameObject prefab)
+        {
+            if (GetAspect<TAspect>(prefab) == null)
+                throw new System.Exception($"prefab should contain {nameof(TAspect)} aspect");
+        }
+        protected static TAspect GetAspect<TAspect>(GameObject go) 
             => go.GetComponentInChildren<TAspect>(true);
+        
     }
 
 }
