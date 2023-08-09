@@ -10,8 +10,6 @@ public abstract class UILayoutProviderSorted : LayoutProvider, IOnScreenOrder, I
 {
     public abstract float SortingOrder { get; }
 
-    float IOnScreenOrder.SortingOrder => throw new System.NotImplementedException();
-
     public abstract void ShouldBeVisible();
     public abstract void ShouldBeInvisible();
     public virtual void ShouldBeVisible(bool visible)
