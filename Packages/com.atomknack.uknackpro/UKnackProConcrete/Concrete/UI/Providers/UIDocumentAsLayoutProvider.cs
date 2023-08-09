@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UKnack.Attributes;
 using UKnack.Preconcrete.UI.Providers;
+using UKnack.UI;
 
 namespace UKnack.Concrete.UI.Providers
 {
@@ -36,7 +37,7 @@ namespace UKnack.Concrete.UI.Providers
                 _dependants[i].LayoutReady(_root);
             for (int i = 0; i < _dependants.Count; ++i)
                 _dependants[i].LayoutReadyAndAllDependantsCalled(_root);
-            RegisterActive(this);
+            IOnScreenOrder.RegisterActive(this);
         }
 
         private void OnDisable()
@@ -44,7 +45,7 @@ namespace UKnack.Concrete.UI.Providers
             RemoveNullDependants();
             for (int i = 0; i < _dependants.Count; ++i)
                 _dependants[i].LayoutGonnaBeDestroyedNow();
-            UnRegisterInactive(this);
+            IOnScreenOrder.UnRegisterInactive(this);
         }
 
         public override void ShouldBeVisible()

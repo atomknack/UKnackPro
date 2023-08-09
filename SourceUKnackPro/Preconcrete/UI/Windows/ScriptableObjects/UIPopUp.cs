@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 using UKnack.Preconcrete.UI.Providers;
-
+using UKnack.UI;
 
 namespace UKnack.Preconcrete.UI.Windows;
 
@@ -68,7 +68,7 @@ public abstract class UIPopUp : UIWindowScriptableObject
 
     public static float ZInvertedOrderForNewWindowOnTop(float defaultOrder)
     {
-        return Math.Max(defaultOrder, UILayoutProviderSorted.NextFreeSpotOnTop());
+        return Math.Max(defaultOrder, IOnScreenOrder.NextFreeSpotOnTop());
         //const float stepCloserToCamera = 100f;
         //if (UILayoutProviderAbstract.TryGetMaxZInversedOrder(out float order))
         //    return order + stepCloserToCamera;
