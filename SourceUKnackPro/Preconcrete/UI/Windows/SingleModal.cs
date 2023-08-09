@@ -28,9 +28,7 @@ namespace UKnack.Preconcrete.UI.Windows
 
         private GameObject CreateNewModal()
         {
-#if UNITY_EDITOR
             ValidPrefab(_prefab);
-#endif
             GameObject modal;
             if (string.IsNullOrWhiteSpace(_instantiateUnder))
             {
@@ -59,12 +57,15 @@ namespace UKnack.Preconcrete.UI.Windows
         {
             if (prefab == null)
                 throw new System.ArgumentNullException(nameof(prefab));
+#if UNITY_EDITOR //heavy lifting we do only in Editor
             GameObject go = prefab as GameObject;
             if (go == null)
                 throw new System.ArgumentException($"prefab should be GameObject");
             if (go.GetComponent<IModal>() == null)
                 throw new System.ArgumentException($"prefab should contain IModal aspect in it root");
+            //Now we have some kind of modal, more specific tests can be done
             ValidateNotNullPrefab(go);
+#endif
         }
     }
 }

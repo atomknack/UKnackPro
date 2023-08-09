@@ -21,6 +21,7 @@ namespace UKnack.Concrete.UI.Windows
 
         protected override void ValidateNotNullPrefab(GameObject prefab)
         {
+            ValidateAspect<IModal>(prefab);
             ValidateAspect<IAskToClose>(prefab);
         }
 
@@ -28,8 +29,11 @@ namespace UKnack.Concrete.UI.Windows
         {
             if (GetAspect<TAspect>(prefab) == null)
                 throw new System.Exception($"prefab should contain {nameof(TAspect)} aspect");
+
+            if (prefab.GetComponentsInChildren<TAspect>(true).Length >0 )
+                throw new System.Exception($"Only one {typeof(TAspect)} allowed per Prefab, but found multiple)");
         }
-        protected static TAspect GetAspect<TAspect>(GameObject go) 
+        protected static TAspect GetAspect<TAspect>(GameObject go)
             => go.GetComponentInChildren<TAspect>(true);
         
     }
