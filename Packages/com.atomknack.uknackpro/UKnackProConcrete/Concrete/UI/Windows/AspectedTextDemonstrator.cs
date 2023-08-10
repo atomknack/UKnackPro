@@ -6,24 +6,27 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace UKnack.Concrete.UI.Windows
 {
-    [CreateAssetMenu(fileName = "ParametrizedTextDemonstrator", menuName = "UKnack/AspectedModals/ParametrizedTextDemonstrator", order = 700)]
-    internal class ParametrizedAspectedTextDemonstrator: AspectedPopUp
+    [AddComponentMenu("UKnack/AspectedModals/AspectedTextDemonstrator(parametrized)")]
+    internal class AspectedTextDemonstrator: AspectedPopUp
     {
         private string _header = null;
         private string _mainBody = null;
 
-        public void Open(string header, string mainBody)
+        public override void ShowPopUp() => throw new System.Exception($"use {nameof(ShowDemonstratorModal)} method to show modal");
+
+        public void ShowDemonstratorModal(string header, string mainBody)
         {
             _header = header;
             _mainBody = mainBody;
             ValidateTextFields();
-            Open();
+            OpenModal();
         }
-        public override void Open()
-        {
-            ValidateTextFields("Use overload: Open(string, string), ");
-            base.Open();
-        }
+
+        //protected override void Open()
+        //{
+        //    ValidateTextFields("Use overload: Open(string, string), ");
+        //    base.Open();
+        //}
 
         protected override void Init(GameObject opened) 
         {

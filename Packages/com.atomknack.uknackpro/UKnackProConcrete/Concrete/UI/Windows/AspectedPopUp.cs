@@ -5,13 +5,11 @@ using UnityEngine;
 
 namespace UKnack.Concrete.UI.Windows
 {
-    [CreateAssetMenu(fileName = "AspectedPopUp", menuName = "UKnack/AspectedModals/AspectedPopUp", order = 700)]
+    [AddComponentMenu("UKnack/AspectedModals/AspectedPopUp")]
     internal class AspectedPopUp : SingleModal
     {
-        protected virtual void PopUpAskedToClose()
-        {
-            CloseModal();
-        }
+        public virtual void ShowPopUp() => OpenModal();
+        protected virtual void PopUpAskedToClose() =>CloseModal();
 
         protected override void Init(GameObject opened)
         {

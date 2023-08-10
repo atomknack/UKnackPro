@@ -5,7 +5,7 @@ using UKnack.UI.Windows.Aspects;
 
 namespace UKnack.Preconcrete.UI.Windows
 {
-    internal abstract class SingleModal: ScriptableObjectWithReadOnlyName
+    internal abstract class SingleModal: MonoBehaviour
     {
         [SerializeField] 
         private string _instantiateUnder = "UIModals";
@@ -17,19 +17,25 @@ namespace UKnack.Preconcrete.UI.Windows
         private GameObject _opened;
 
         protected abstract void ValidateNotNullPrefab(GameObject prefab);
+        protected abstract void Init(GameObject opened);
 
-        public virtual void Open()
+        protected virtual void OpenModal()
         {
             if (_opened == null)
                 _opened = CreateNewModal();
-            
             Init(_opened);
+        }
+        protected virtual void CloseModal()
+        {
+            //if (_opened == null)
+            //    throw new System.InvalidOperationException($"Trying to close Modal, but we have null in {nameof(_opened)})");
+            Destroy(_opened);
+            _opened = null;
         }
 
         private GameObject CreateNewModal()
         {
             ValidPrefab(_prefab);
-            GameObject modal;
             if (string.IsNullOrWhiteSpace(_instantiateUnder))
             {
                 return Instantiate(_prefab);
@@ -40,17 +46,6 @@ namespace UKnack.Preconcrete.UI.Windows
                 root = new GameObject(_instantiateUnder);
             return Instantiate(_prefab, root.transform);
             
-        }
-
-        protected abstract void Init(GameObject opened);
-
-        protected virtual void CloseModal() 
-        {
-            if (_opened == null)
-                throw new System.InvalidOperationException($"Trying to close Modal, but we have null in {nameof(_opened)})");
-
-            Destroy(_opened);
-            _opened = null;
         }
 
         protected void ValidPrefab(UnityEngine.Object prefab)
