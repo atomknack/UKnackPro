@@ -32,6 +32,13 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39887c7623345054fadc33b380128b6c
+    m_Address: License_Newtonsoft_Json
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 8bbe43b7312c71b41bf8100a69d6ddef, type: 2}
   m_SchemaSet:

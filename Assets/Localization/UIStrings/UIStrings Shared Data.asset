@@ -43,6 +43,18 @@ MonoBehaviour:
     m_Key: aspectedUItests/UIDocument 4
     m_Metadata:
       m_Items: []
+  - m_Id: 345142628507648
+    m_Key: aspectedUItests/UIDocument 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345195464155136
+    m_Key: aspectedUItests/UIDocument 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345287659151360
+    m_Key: aspectedUItests/UIDocument 7
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

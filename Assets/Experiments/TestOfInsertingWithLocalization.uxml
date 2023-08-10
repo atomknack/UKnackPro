@@ -2,4 +2,9 @@
     <ui:VisualElement style="flex-grow: 1; position: absolute; top: 20px; left: 20px; width: 90%; height: 50px;">
         <ui:VisualElement name="insertHere" style="flex-grow: 1;" />
     </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label text="Label" name="Header" />
+        <ui:TextField value="filler text" vertical-scroller-visibility="AlwaysVisible" multiline="true" name="TextField" style="min-height: 200px; max-height: 500px;" />
+        <ui:Button text="Next" name="Next" />
+    </ui:VisualElement>
 </ui:UXML>

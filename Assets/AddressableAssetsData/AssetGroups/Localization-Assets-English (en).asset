@@ -23,8 +23,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 39887c7623345054fadc33b380128b6c
-    m_Address: License_Newtonsoft_Json
+  - m_GUID: 7b44d4c58c38de54c805982dd746d4a5
+    m_Address: InsertLabels
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55caed06a37e07540b0423df6f408994
+    m_Address: TextDemonstrator
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91ebd24bea030b545b966b8a03da1bd2
+    m_Address: Assets/PackageLicenses/License_MIT.txt
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

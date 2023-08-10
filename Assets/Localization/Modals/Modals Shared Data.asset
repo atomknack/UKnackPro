@@ -19,13 +19,23 @@ MonoBehaviour:
     m_Key: New Entry
     m_Metadata:
       m_Items: []
-  - m_Id: 4093598695424
-    m_Key: New Entry 1
+  - m_Id: 917077523488768
+    m_Key: aspectedUItests/UIDocument
+    m_Metadata:
+      m_Items: []
+  - m_Id: 917101057728512
+    m_Key: aspectedUItests/UIDocument 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 917141272715264
+    m_Key: aspectedUItests/UIDocument 2
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items:
     - rid: 911323791729361207
+    - rid: 911323848928395586
+    - rid: 911323848928395599
   m_KeyGenerator:
     rid: 911323791729361206
   references:
@@ -45,3 +55,27 @@ MonoBehaviour:
           - ru
         m_TypeString: UKnack.Concrete.UI.Windows.AspectedPopUp, UKnackProConcrete,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - rid: 911323848928395586
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 917077523488768
+          m_TableCodes:
+          - en
+          - ru
+        - m_KeyId: 917141272715264
+          m_TableCodes:
+          - en
+          - ru
+        m_TypeString: UnityEditor.MonoScript, UnityEditor.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - rid: 911323848928395599
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 917101057728512
+          m_TableCodes:
+          - en
+          - ru
+        m_TypeString: UnityEngine.TextAsset, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

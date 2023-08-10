@@ -46,6 +46,18 @@ MonoBehaviour:
     m_Localized: happening3
     m_Metadata:
       m_Items: []
+  - m_Id: 345142628507648
+    m_Localized: Hello wrold, InsertLabels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345195464155136
+    m_Localized: Second Article is License
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345287659151360
+    m_Localized: Thisr is TextDemonstrator
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
