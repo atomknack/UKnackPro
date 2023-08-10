@@ -38,6 +38,8 @@ public class TextDemonstrator : MonoBehaviour
 
     private int _current = 0;
 
+    private bool _initialized = false;
+
     private void ButtonClicked()
     {
         _current++;
@@ -47,8 +49,11 @@ public class TextDemonstrator : MonoBehaviour
         UpdateCurrentUI();
     }
 
-    private void UpdateCurrentUI()
+    public void UpdateCurrentUI()
     {
+        if (_initialized == false)
+            return;
+
         var article = _articles[_current];
         _header.text = article.title;
         _textField.SetValueWithoutNotify(article.text.text);
@@ -65,6 +70,7 @@ public class TextDemonstrator : MonoBehaviour
             throw new System.Exception("should be at least one article to work");
 
         _button.clicked += ButtonClicked;
+        _initialized = true;
         UpdateCurrentUI();
 
 
@@ -72,6 +78,7 @@ public class TextDemonstrator : MonoBehaviour
     private void OnDisable()
     {
         _button.clicked -= ButtonClicked;
+        _initialized = false;
     }
 
     private static TElement GetOrThrow<TElement>(VisualElement from, string what) where TElement : VisualElement
