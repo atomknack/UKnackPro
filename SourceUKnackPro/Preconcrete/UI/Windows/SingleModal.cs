@@ -64,6 +64,8 @@ namespace UKnack.Preconcrete.UI.Windows
                 throw new System.ArgumentException($"prefab should be GameObject");
             if (go.GetComponent<IModal>() == null)
                 throw new System.ArgumentException($"prefab should contain IModal aspect in it root");
+            // if we have enabled gameobject Unity somehow calls it OnEnable before had chance to actually initialize it.
+            // why? Don't know. Maybe it because we need to call GetComponent-like methods in initialization, maybe not.
             if (go.activeSelf)
                 throw new System.Exception("Modal root should not be enabled Gameobjet");
             //Now we have some kind of modal, more specific tests can be done
