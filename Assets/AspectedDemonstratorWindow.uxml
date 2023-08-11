@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="width: 80%; width: 80%; background-color: rgba(245, 146, 0, 0.43); top: 10%; left: 10%; height: 50%;">
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Label text="Header" name="Header" />
+            <ui:TextField value="text" vertical-scroller-visibility="AlwaysVisible" multiline="true" name="MainText" style="height: 80%;" />
+        </ui:VisualElement>
+        <ui:Button text="Close" name="Close" />
+    </ui:VisualElement>
+</ui:UXML>

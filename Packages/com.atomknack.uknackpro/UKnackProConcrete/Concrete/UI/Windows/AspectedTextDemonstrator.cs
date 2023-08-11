@@ -31,9 +31,11 @@ namespace UKnack.Concrete.UI.Windows
         protected override void Init(GameObject opened) 
         {
             ValidateTextFields("This should never happen, ");
-            base.Init(opened);
             GetAspect<ITextSetter_HeaderText>(opened).HeaderText = _header;
             GetAspect<ITextSetter_MainBodyText>(opened).MainBodyText = _mainBody;
+
+            base.Init(opened);
+
             _header = null;
             _mainBody = null;
         }

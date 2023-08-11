@@ -12,13 +12,15 @@ GameObject:
   - component: {fileID: 3594162094644384261}
   - component: {fileID: 3020008653047987934}
   - component: {fileID: 9010100512819330035}
+  - component: {fileID: 6757267149503783461}
+  - component: {fileID: 6901610664511548916}
   m_Layer: 5
-  m_Name: AspectedPopUpPrefab
+  m_Name: AspectedDemonstrator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6327593526831574557
 Transform:
   m_ObjectHideFlags: 0
@@ -76,3 +78,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _document: {fileID: 0}
   _buttonName: Close
+--- !u!114 &6757267149503783461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892248369721092919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc28406752cee3440a3270b7aef550c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 0}
+  _labelName: Header
+--- !u!114 &6901610664511548916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892248369721092919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cebb39b057ec04a837a2c5f6f509e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 0}
+  _visualElementName: MainText

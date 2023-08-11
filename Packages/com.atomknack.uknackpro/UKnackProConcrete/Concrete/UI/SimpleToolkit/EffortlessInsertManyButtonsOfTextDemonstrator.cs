@@ -6,6 +6,7 @@ using UKnack.Concrete.UI.Windows;
 
 namespace UKnack.Concrete.UI.SimpleToolkit
 {
+    [AddComponentMenu("UKnack/UI.SimpleToolkit/InsertManyButtonsOfTextDemonstrator")]
     internal class EffortlessInsertManyButtonsOfTextDemonstrator: AspectedTextDemonstrator
     {
         [System.Serializable]
@@ -45,7 +46,8 @@ namespace UKnack.Concrete.UI.SimpleToolkit
 
         private void ButtonClicked(int index)
         {
-            throw new System.NotImplementedException($"Button {index} clicked");
+            Debug.Log($"Button {index} clicked");
+            ShowDemonstratorModal(_items[index].header, _items[index].text.text);
         }
 
         private void OnEnable() 
@@ -57,13 +59,14 @@ namespace UKnack.Concrete.UI.SimpleToolkit
             _insertedButtons = new InsertedButton[_items.Length];
             for (int i = 0; i < _items.Length; i++)
             {
+                int index = i;
                 InsertedButton inserted = new InsertedButton();
-                inserted.element = new VisualElementSortedOnAddition(_items[i].buttonOrder);
+                inserted.element = new VisualElementSortedOnAddition(_items[index].buttonOrder);
                 inserted.element.Add(_buttonVisualAsset.Instantiate());
                 Button button = inserted.element.Q<Button>();
-                inserted.click = ()=>ButtonClicked(i);
+                inserted.click = ()=>ButtonClicked(index);
                 button.clicked += inserted.click;
-                _insertedButtons[i] = inserted;
+                _insertedButtons[index] = inserted;
 
                 _whereToInsert.TryAddSafeAndOrderCorrectly(inserted.element);
 

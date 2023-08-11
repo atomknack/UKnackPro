@@ -15,6 +15,7 @@ namespace UKnack.Concrete.UI.Windows
         {
             var askToClose = GetAspect<IAskToClose>(opened);
             askToClose.AskToCloseAction = PopUpAskedToClose;
+            base.Init(opened);
         }
 
         protected override void ValidateNotNullPrefab(GameObject prefab)
@@ -26,9 +27,9 @@ namespace UKnack.Concrete.UI.Windows
         protected static void ValidateAspect<TAspect>(GameObject prefab)
         {
             if (GetAspect<TAspect>(prefab) == null)
-                throw new System.Exception($"prefab should contain {nameof(TAspect)} aspect");
+                throw new System.Exception($"prefab should contain {typeof(TAspect).Name} aspect. Fullname: {typeof(TAspect).FullName}");
 
-            if (prefab.GetComponentsInChildren<TAspect>(true).Length >0 )
+            if (prefab.GetComponentsInChildren<TAspect>(true).Length > 1 )
                 throw new System.Exception($"Only one {typeof(TAspect)} allowed per Prefab, but found multiple)");
         }
         protected static TAspect GetAspect<TAspect>(GameObject go)

@@ -17,12 +17,18 @@ namespace UKnack.Preconcrete.UI.Windows
         private GameObject _opened;
 
         protected abstract void ValidateNotNullPrefab(GameObject prefab);
-        protected abstract void Init(GameObject opened);
+        protected virtual void Init(GameObject opened)
+        {
+            opened.SetActive(true);
+        }
 
         protected virtual void OpenModal()
         {
             if (_opened == null)
+            {
                 _opened = CreateNewModal();
+            }
+
             Init(_opened);
         }
         protected virtual void CloseModal()
@@ -58,6 +64,8 @@ namespace UKnack.Preconcrete.UI.Windows
                 throw new System.ArgumentException($"prefab should be GameObject");
             if (go.GetComponent<IModal>() == null)
                 throw new System.ArgumentException($"prefab should contain IModal aspect in it root");
+            if (go.activeSelf)
+                throw new System.Exception("Modal root should not be enabled Gameobjet");
             //Now we have some kind of modal, more specific tests can be done
             ValidateNotNullPrefab(go);
 #endif
