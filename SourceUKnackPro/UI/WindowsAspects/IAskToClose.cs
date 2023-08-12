@@ -2,7 +2,7 @@
 
 namespace UKnack.UI.Windows.Aspects;
 
-internal interface IAskToClose
+internal interface IAskToClose: IAspect
 {
     internal Action AskToCloseAction { set; }
     public void AskToClose();

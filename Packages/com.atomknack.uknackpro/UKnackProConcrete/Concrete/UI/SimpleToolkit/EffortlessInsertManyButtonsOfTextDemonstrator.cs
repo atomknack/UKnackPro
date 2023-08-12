@@ -4,6 +4,7 @@ using UKnack.Attributes;
 using UKnack.UI;
 using UKnack.Concrete.UI.Windows;
 using System;
+using System.Linq;
 
 namespace UKnack.Concrete.UI.SimpleToolkit
 {
@@ -111,6 +112,8 @@ namespace UKnack.Concrete.UI.SimpleToolkit
             Button button = temp.Q<Button>();
             if (button == null)
                 throw new System.Exception("button template should contain Button visual element");
+            if (temp.Query<Button>().Build().Count() > 1)
+                throw new System.Exception("button template should contain only one Button");
         }
     }
 }

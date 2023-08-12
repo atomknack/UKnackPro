@@ -1,4 +1,4 @@
-﻿
+﻿using System.Linq;
 using UKnack.Concrete.UI.Windows;
 using UKnack.UI.Windows.Aspects;
 using UnityEngine;
@@ -13,6 +13,15 @@ namespace UKnack.Concrete.UI.Windows
         private string _mainBody = null;
 
         public override void ShowPopUp() => throw new System.Exception($"use {nameof(ShowDemonstratorModal)} method to show modal");
+
+        protected override void ValidateAspects(IAspect[] aspects)
+        {
+            System.Type[] actualAspectTypes = aspects.Select(x => x.GetType()).ToArray();
+            EnsureThereIsOnlyOneOfEachAspectAndNoUncaccountedFor(
+                new System.Type[] { typeof(IModal), typeof(IAskToClose), typeof(ITextSetter_HeaderText), typeof(ITextSetter_MainBodyText)},
+                actualAspectTypes
+                );
+        }
 
         public void ShowDemonstratorModal(string header, string mainBody)
         {
@@ -47,12 +56,6 @@ namespace UKnack.Concrete.UI.Windows
             GetAspect<ITextSetter_MainBodyText>(opened).MainBodyText = _mainBody;
 
             base.Init(opened);
-        }
-        protected override void ValidateNotNullPrefab(GameObject prefab)
-        {
-            base.ValidateNotNullPrefab(prefab);
-            ValidateAspect<ITextSetter_HeaderText>(prefab);
-            ValidateAspect<ITextSetter_MainBodyText>(prefab);
         }
         private void ValidateTextFields(string exceptionMessagePrefix = null)
         {

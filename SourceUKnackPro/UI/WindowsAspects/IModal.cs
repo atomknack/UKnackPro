@@ -2,6 +2,6 @@
 
 namespace UKnack.UI.Windows.Aspects;
 
-public interface IModal
+public interface IModal: IAspect
 {
 }

@@ -16,8 +16,9 @@ namespace UKnack.Preconcrete.UI.Windows
 
         private GameObject _opened;
 
-        protected abstract void ValidateNotNullPrefab(GameObject prefab);
-        
+//protected abstract void ValidateNotNullPrefab(GameObject prefab);
+        protected abstract void ValidateAspects(IAspect[] aspects);
+
         protected virtual void OnDisable()
         {
             if (_opened != null)
@@ -84,8 +85,14 @@ namespace UKnack.Preconcrete.UI.Windows
             if (go.activeSelf)
                 throw new System.Exception("Modal root should not be enabled Gameobjet");
             //Now we have some kind of modal, more specific tests can be done
-            ValidateNotNullPrefab(go);
+//ValidateNotNullPrefab(go);
+            IAspect[] aspects = go.GetComponentsInChildren<IAspect>(true);
+            ValidateAspects(aspects);
 #endif
         }
+
+        protected static TAspect GetAspect<TAspect>(GameObject go)
+            => go.GetComponentInChildren<TAspect>(true);
+
     }
 }
