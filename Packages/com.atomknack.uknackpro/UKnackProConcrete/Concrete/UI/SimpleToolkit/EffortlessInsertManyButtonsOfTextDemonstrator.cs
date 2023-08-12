@@ -64,6 +64,7 @@ namespace UKnack.Concrete.UI.SimpleToolkit
                 inserted.element = new VisualElementSortedOnAddition(_items[index].buttonOrder);
                 inserted.element.Add(_buttonVisualAsset.Instantiate());
                 Button button = inserted.element.Q<Button>();
+                button.text = _items[index].buttonName;
                 inserted.click = ()=>ButtonClicked(index);
                 button.clicked += inserted.click;
                 _insertedButtons[index] = inserted;

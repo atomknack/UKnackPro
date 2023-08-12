@@ -837,6 +837,10 @@ MonoBehaviour:
     buttonName: butt
     header: head
     text: {fileID: 11500000, guid: e7be19f5637c7e746bab0a3fdd67788c, type: 3}
+  - buttonOrder: 0
+    buttonName: another
+    header: this is header
+    text: {fileID: 11500000, guid: 55caed06a37e07540b0423df6f408994, type: 3}
 --- !u!114 &2098285702
 MonoBehaviour:
   m_ObjectHideFlags: 0
