@@ -9,12 +9,11 @@ namespace UKnack.Concrete.UI.Windows
     internal class AspectedPopUp : SingleModal
     {
         public virtual void ShowPopUp() => OpenModal();
-        protected virtual void PopUpAskedToClose() =>CloseModal();
 
         protected override void Init(GameObject opened)
         {
             var askToClose = GetAspect<IAskToClose>(opened);
-            askToClose.AskToCloseAction = PopUpAskedToClose;
+            askToClose.AskToCloseAction = CloseModal;
             base.Init(opened);
         }
 

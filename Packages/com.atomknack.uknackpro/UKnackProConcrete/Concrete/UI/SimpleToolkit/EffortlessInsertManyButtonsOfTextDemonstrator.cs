@@ -48,7 +48,7 @@ namespace UKnack.Concrete.UI.SimpleToolkit
         private int _lastClickedButton;
         private void ButtonClicked(int index)
         {
-            Debug.Log($"Button {index} clicked");
+            //Debug.Log($"Button {index} clicked");
             ShowDemonstratorModal(_items[index].header, _items[index].text.text);
             _lastClickedButton = index;
         }
@@ -91,12 +91,13 @@ namespace UKnack.Concrete.UI.SimpleToolkit
             ItemsUpdated();
         }
 
-        private void OnDisable() 
+        protected override void OnDisable() 
         {
             for (int i = 0;i < _items.Length;i++)
             {
                 _whereToInsert.Remove(_insertedButtons[i].element);
             }
+            base.OnDisable();
         }
 
         private static void ButtonAssetValidation(UnityEngine.Object obj)

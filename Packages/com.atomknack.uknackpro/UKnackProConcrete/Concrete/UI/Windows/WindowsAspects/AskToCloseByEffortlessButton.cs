@@ -12,7 +12,7 @@ namespace UKnack.Concrete.UI.Windows.WindowsAspects
     internal class AskToCloseByEffortlessButton : EffortlessUIElement_Button, IAskToClose
     {
         private Action _askToCloseAction = null;
-        Action IAskToClose.AskToCloseAction { set { _askToCloseAction = value; Debug.Log(_askToCloseAction); } }
+        Action IAskToClose.AskToCloseAction { set { _askToCloseAction = value; } } // Debug.Log(_askToCloseAction); } }
 
         public void AskToClose()
         {

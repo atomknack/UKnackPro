@@ -17,6 +17,14 @@ namespace UKnack.Preconcrete.UI.Windows
         private GameObject _opened;
 
         protected abstract void ValidateNotNullPrefab(GameObject prefab);
+        
+        protected virtual void OnDisable()
+        {
+            if (_opened != null)
+            {
+                CloseModal();
+            }
+        }
         protected virtual void Init(GameObject opened)
         {
             opened.SetActive(true);
@@ -40,8 +48,8 @@ namespace UKnack.Preconcrete.UI.Windows
         }
         protected virtual void CloseModal()
         {
-            //if (_opened == null)
-            //    throw new System.InvalidOperationException($"Trying to close Modal, but we have null in {nameof(_opened)})");
+            if (_opened == null)
+                Debug.LogError($"Trying to close Modal, but we have null in {nameof(_opened)})");
             Destroy(_opened);
             _opened = null;
         }
