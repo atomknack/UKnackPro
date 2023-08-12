@@ -20,6 +20,18 @@ namespace UKnack.Concrete.UI.Windows
             _mainBody = mainBody;
             ValidateTextFields();
             OpenModal();
+            _header = null;
+            _mainBody = null;
+        }
+
+        public void TryUpdateDemonstratorModal(string header, string mainBody)
+        {
+            _header = header;
+            _mainBody = mainBody;
+            ValidateTextFields();
+            TryUpdateCurrentModal();
+            _header = null;
+            _mainBody = null;
         }
 
         //protected override void Open()
@@ -30,14 +42,11 @@ namespace UKnack.Concrete.UI.Windows
 
         protected override void Init(GameObject opened) 
         {
-            ValidateTextFields("This should never happen, ");
+            ValidateTextFields("This should never happen, "); // redundand validation, could be removed
             GetAspect<ITextSetter_HeaderText>(opened).HeaderText = _header;
             GetAspect<ITextSetter_MainBodyText>(opened).MainBodyText = _mainBody;
 
             base.Init(opened);
-
-            _header = null;
-            _mainBody = null;
         }
         protected override void ValidateNotNullPrefab(GameObject prefab)
         {

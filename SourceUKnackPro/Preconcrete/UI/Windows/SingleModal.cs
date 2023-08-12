@@ -27,8 +27,15 @@ namespace UKnack.Preconcrete.UI.Windows
             if (_opened == null)
             {
                 _opened = CreateNewModal();
+                if (_opened == null)
+                    throw new System.Exception("While trying to open new modal recieved null gameobject");
             }
-
+            TryUpdateCurrentModal();
+        }
+        protected virtual void TryUpdateCurrentModal()
+        {
+            if (_opened == null)
+                return;
             Init(_opened);
         }
         protected virtual void CloseModal()

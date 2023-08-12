@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 using UKnack.Attributes;
 using UKnack.UI;
 using UKnack.Concrete.UI.Windows;
+using System;
 
 namespace UKnack.Concrete.UI.SimpleToolkit
 {
@@ -44,10 +45,26 @@ namespace UKnack.Concrete.UI.SimpleToolkit
         
         private InsertedButton[] _insertedButtons;
 
+        private int _lastClickedButton;
         private void ButtonClicked(int index)
         {
             Debug.Log($"Button {index} clicked");
             ShowDemonstratorModal(_items[index].header, _items[index].text.text);
+            _lastClickedButton = index;
+        }
+
+        public void ItemsUpdated()
+        {
+            if (_insertedButtons == null)
+                return; //not initialized yet, no need to update any
+
+            if (_items.Length != _insertedButtons.Length)
+                throw new System.InvalidOperationException($"Updated items length {_items.Length} differs from {_insertedButtons.Length}");
+            for (int i = 0; i < _insertedButtons.Length; i++)
+            {
+                _insertedButtons[i].element.Q<Button>().text = _items[i].buttonName;
+            }
+            TryUpdateDemonstratorModal(_items[_lastClickedButton].header, _items[_lastClickedButton].text.text);
         }
 
         private void OnEnable() 
@@ -63,16 +80,15 @@ namespace UKnack.Concrete.UI.SimpleToolkit
                 InsertedButton inserted = new InsertedButton();
                 inserted.element = new VisualElementSortedOnAddition(_items[index].buttonOrder);
                 inserted.element.Add(_buttonVisualAsset.Instantiate());
-                Button button = inserted.element.Q<Button>();
-                button.text = _items[index].buttonName;
                 inserted.click = ()=>ButtonClicked(index);
-                button.clicked += inserted.click;
+                inserted.element.Q<Button>().clicked += inserted.click;
                 _insertedButtons[index] = inserted;
 
                 _whereToInsert.TryAddSafeAndOrderCorrectly(inserted.element);
 
                 // if something don't work see ButtonInsertableAbstract as example
             }
+            ItemsUpdated();
         }
 
         private void OnDisable() 

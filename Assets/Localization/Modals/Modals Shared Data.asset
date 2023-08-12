@@ -31,6 +31,14 @@ MonoBehaviour:
     m_Key: aspectedUItests/UIDocument 2
     m_Metadata:
       m_Items: []
+  - m_Id: 1683727378079744
+    m_Key: aspectedUItests/UIDocument (1)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1683743538733056
+    m_Key: aspectedUItests/UIDocument (1) 1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 911323791729361207
@@ -67,6 +75,12 @@ MonoBehaviour:
           m_TableCodes:
           - en
           - ru
+        - m_KeyId: 1683727378079744
+          m_TableCodes:
+          - en
+        - m_KeyId: 1683743538733056
+          m_TableCodes:
+          - en
         m_TypeString: UnityEditor.MonoScript, UnityEditor.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - rid: 911323848928395599
@@ -76,6 +90,12 @@ MonoBehaviour:
         - m_KeyId: 917101057728512
           m_TableCodes:
           - en
+          - ru
+        - m_KeyId: 1683727378079744
+          m_TableCodes:
+          - ru
+        - m_KeyId: 1683743538733056
+          m_TableCodes:
           - ru
         m_TypeString: UnityEngine.TextAsset, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

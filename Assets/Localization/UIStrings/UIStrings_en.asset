@@ -58,6 +58,22 @@ MonoBehaviour:
     m_Localized: Thisr is TextDemonstrator
     m_Metadata:
       m_Items: []
+  - m_Id: 1111832324792320
+    m_Localized: butt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1111884497739776
+    m_Localized: another
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1111914365378560
+    m_Localized: head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1111938570706944
+    m_Localized: this is header
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

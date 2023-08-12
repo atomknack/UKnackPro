@@ -35,8 +35,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 91ebd24bea030b545b966b8a03da1bd2
-    m_Address: Assets/PackageLicenses/License_MIT.txt
+  - m_GUID: e7be19f5637c7e746bab0a3fdd67788c
+    m_Address: StringDatabaseGetLocalizedStringExample
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

@@ -808,6 +808,7 @@ GameObject:
   - component: {fileID: 2098285703}
   - component: {fileID: 2098285702}
   - component: {fileID: 2098285701}
+  - component: {fileID: 2098285704}
   m_Layer: 5
   m_Name: UIDocument (1)
   m_TagString: Untagged
@@ -872,6 +873,136 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2098285704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098285700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 911323897347440696
+  references:
+    version: 2
+    RefIds:
+    - rid: 911323897347440696
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 2098285701}
+        m_TrackedProperties:
+          items:
+          - rid: 911323897347440697
+          - rid: 911323897347440698
+          - rid: 911323897347440699
+          - rid: 911323897347440700
+          - rid: 911323897347440701
+          - rid: 911323897347440703
+        m_UpdateType: 1
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 2098285701}
+              m_TargetAssemblyTypeName: UKnack.Concrete.UI.SimpleToolkit.EffortlessInsertManyButtonsOfTextDemonstrator,
+                UKnackProConcrete
+              m_MethodName: ItemsUpdated
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 1
+    - rid: 911323897347440697
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:216429e72147343428a9f07ea318e9a1
+          m_TableEntryReference:
+            m_KeyId: 1111832324792320
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: _items.Array.data[0].buttonName
+    - rid: 911323897347440698
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:216429e72147343428a9f07ea318e9a1
+          m_TableEntryReference:
+            m_KeyId: 1111884497739776
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: _items.Array.data[1].buttonName
+    - rid: 911323897347440699
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:216429e72147343428a9f07ea318e9a1
+          m_TableEntryReference:
+            m_KeyId: 1111914365378560
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: _items.Array.data[0].header
+    - rid: 911323897347440700
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:216429e72147343428a9f07ea318e9a1
+          m_TableEntryReference:
+            m_KeyId: 1111938570706944
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: _items.Array.data[1].header
+    - rid: 911323897347440701
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 911323897347440702
+        m_PropertyPath: _items.Array.data[0].text
+    - rid: 911323897347440702
+      type: {class: LocalizedObject, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:e760989f7c7374441a8baf0570ebc0cb
+        m_TableEntryReference:
+          m_KeyId: 1683727378079744
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 911323897347440703
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 911323897347440704
+        m_PropertyPath: _items.Array.data[1].text
+    - rid: 911323897347440704
+      type: {class: LocalizedObject, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:e760989f7c7374441a8baf0570ebc0cb
+        m_TableEntryReference:
+          m_KeyId: 1683743538733056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
 --- !u!1001 &2270213854045946879
 PrefabInstance:
   m_ObjectHideFlags: 0
