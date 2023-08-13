@@ -827,7 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _instantiateUnder: UIModals
-  _prefab: {fileID: 892248369721092919, guid: 962978aa8bf4d37408f5bec64149ec71, type: 3}
+  _prefab: {fileID: 892248369721092919, guid: fc4e51b71fec9b841af290cfc58a2d80, type: 3}
 --- !u!114 &1850228354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 440574f610560ed419a9a3f23a2856e2, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: f3c29248157489b469f4b1e5a9d387a1, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 63a0be084759a6a4b8ec12b9d99e9a64, type: 3}
   m_SortingOrder: 0
 --- !u!4 &1850228355
 Transform:
