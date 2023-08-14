@@ -1,25 +1,20 @@
-﻿using System.Linq;
-using UKnack.Concrete.UI.Windows;
+﻿using UKnack.Preconcrete.UI.Windows;
 using UKnack.UI.Windows.Aspects;
 using UnityEngine;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace UKnack.Concrete.UI.Windows
 {
-    [AddComponentMenu("UKnack/AspectedModals/AspectedTextDemonstrator(parametrized)")]
-    internal class AspectedTextDemonstrator: AspectedPopUp
+    [AddComponentMenu("UKnack/AspectedModals/Parametrized/TextDemonstrator")]
+    internal class ParametrizedTextDemonstrator: AspectedModalSingle
     {
         private string _header = null;
         private string _mainBody = null;
 
-        public override void ShowPopUp() => throw new System.Exception($"use {nameof(ShowDemonstratorModal)} method to show modal");
-
         protected override void ValidateAspects(IAspect[] aspects)
         {
-            System.Type[] actualAspectTypes = aspects.Select(x => x.GetType()).ToArray();
             EnsureThereIsOnlyOneOfEachAspectAndNoUncaccountedFor(
                 new System.Type[] { typeof(IModal), typeof(IAskToClose), typeof(ITextSetter_HeaderText), typeof(ITextSetter_MainBodyText)},
-                actualAspectTypes
+                TypesOfAspects(aspects)
                 );
         }
 
@@ -43,18 +38,12 @@ namespace UKnack.Concrete.UI.Windows
             _mainBody = null;
         }
 
-        //protected override void Open()
-        //{
-        //    ValidateTextFields("Use overload: Open(string, string), ");
-        //    base.Open();
-        //}
-
         protected override void Init(GameObject opened) 
         {
             ValidateTextFields("This should never happen, "); // redundand validation, could be removed
             GetAspect<ITextSetter_HeaderText>(opened).HeaderText = _header;
             GetAspect<ITextSetter_MainBodyText>(opened).MainBodyText = _mainBody;
-
+            GetAspect<IAskToClose>(opened).AskToCloseAction = CloseModal;
             base.Init(opened);
         }
         private void ValidateTextFields(string exceptionMessagePrefix = null)

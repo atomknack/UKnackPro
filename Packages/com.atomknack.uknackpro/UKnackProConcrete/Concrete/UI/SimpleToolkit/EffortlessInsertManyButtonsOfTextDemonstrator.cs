@@ -9,7 +9,7 @@ using System.Linq;
 namespace UKnack.Concrete.UI.SimpleToolkit
 {
     [AddComponentMenu("UKnack/UI.SimpleToolkit/InsertManyButtonsOfTextDemonstrator")]
-    internal class EffortlessInsertManyButtonsOfTextDemonstrator: AspectedTextDemonstrator
+    internal class EffortlessInsertManyButtonsOfTextDemonstrator: ParametrizedTextDemonstrator
     {
         [System.Serializable]
         public struct DemonstratorItem
