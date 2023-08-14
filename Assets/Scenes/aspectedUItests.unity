@@ -784,7 +784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1850228352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,8 +803,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1850228353}
-        m_TargetAssemblyTypeName: UKnack.Concrete.UI.Windows.AspectedPopUp, UKnackProConcrete
-        m_MethodName: ShowPopUp
+        m_TargetAssemblyTypeName: UKnack.Concrete.UI.Windows.SimpleAlertDemonstrator,
+          UKnackProConcrete
+        m_MethodName: ShowWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -827,7 +828,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _instantiateUnder: UIModals
-  _prefab: {fileID: 892248369721092919, guid: fc4e51b71fec9b841af290cfc58a2d80, type: 3}
+  _aspectedPrefab: {fileID: 892248369721092919, guid: fc4e51b71fec9b841af290cfc58a2d80, type: 3}
+  _askedToClose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1850228354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,7 +912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2098285701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _instantiateUnder: UIModals
-  _prefab: {fileID: 892248369721092919, guid: 962978aa8bf4d37408f5bec64149ec71, type: 3}
+  _aspectedPrefab: {fileID: 892248369721092919, guid: 962978aa8bf4d37408f5bec64149ec71, type: 3}
   _document: {fileID: 0}
   _idWhereToInsert: InsertHere
   _buttonVisualAsset: {fileID: 9197481963319205126, guid: f3c29248157489b469f4b1e5a9d387a1, type: 3}
