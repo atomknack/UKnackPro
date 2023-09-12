@@ -13,7 +13,6 @@ using static UnityEngine.InputSystem.HID.HID;
 
 namespace UKnack.Concrete.UI.SimpleToolkit
 {
-    [Obsolete("Not tested")]
     [AddComponentMenu("UKnack/UI.SimpleToolkit/EffortlessManyOverOutToIValueBool")]
     internal sealed class EffortlessManyOverOutToIValueBool: MonoBehaviour
     {
