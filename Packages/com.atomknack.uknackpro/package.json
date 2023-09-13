@@ -1,6 +1,6 @@
 {
   "name": "com.atomknack.uknackpro",
-  "version": "1.18.1",
+  "version": "1.19.0",
   "displayName": "UKnack Pro",
   "description": "Set of Pro tools that make working with Unity better and help write cleaner code",
   "unity": "2022.2",
