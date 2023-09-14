@@ -15,7 +15,7 @@ namespace UKnack.Concrete.Events
 /// This class not intended to be used in code, but only made for ease of creation scriptable object in Unity Editor
 [CreateAssetMenu(fileName = "PublisherToSOEvent_Vector3Int", menuName = "UKnack/Publishers/To Vector3Int")]
 [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-internal class SOPublisher_Concrete_Vector3Int : SOPublisher<Vector3Int>
+public class SOPublisher_Concrete_Vector3Int : SOPublisher<Vector3Int>
 {
     [SerializeField]
     [ValidReference(typeof(IEvent<Vector3Int>), nameof(IEvent<Vector3Int>.Validate),

@@ -13,7 +13,7 @@ namespace UKnack.Concrete.Events
 {
     /// This class not intended to be used in code, but only made for ease of creation scriptable object in Unity Editor
     [CreateAssetMenu(fileName = "ConditionalPublisherToSOEvent_short ", menuName = "UKnack/ConditionalPublishers/To short")]
-    internal sealed class SOConditionalPublisher_Concrete_short : SOPublisher_Concrete_short
+    public sealed class SOConditionalPublisher_Concrete_short : SOPublisher_Concrete_short
     {
             [Tooltip("This publisher will publish only when this value is true, if value is false publish call will be silently ignored")]
             [SerializeField] 
